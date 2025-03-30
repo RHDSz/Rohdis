@@ -9,7 +9,7 @@ except socket.herror:
     print("No se pudo resolver el nombre del host")
 
 with open("puertos_abiertos.txt", "w") as archivo:
-    for i in range(1, 500):  #Busca en todos los puertos desde 1 hasta 65535. En este caso, se utilizará hasta el puerto 500 para no tardar tanto.
+    for i in range(1, 65536):  #Busca en todos los puertos desde 1 hasta 65536.
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  #Crea un nuevo socket utilizando IPv4 y TCP
         s.settimeout(0.1)  #Establece un tiempo de espera de 0.1 segundos para la conexión
         
